@@ -1,0 +1,28 @@
+.box {
+    position: relative;
+    /*max-width: 800px;  Maximum width */
+    max-width: 90vw;
+    margin: 0 auto; /* Center it */
+  }
+  
+  .box .content {
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    left: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    padding: 20px; /* Some padding */
+  }
+  
+  
+  .shade{
+    box-shadow: 10px 10px 5px rgb(201, 198, 198);
+    margin: 4%;
+  }
+
+  .shade:hover{
+    box-shadow: 10px 10px 5px rgb(226, 173, 173);
+    margin: 3%;
+  }

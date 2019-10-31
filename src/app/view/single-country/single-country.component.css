@@ -1,0 +1,68 @@
+.avatar {
+    height: 100%;
+    background-size: cover;    
+  }
+
+  .rgba-gradient .full-bg-img {
+    background: linear-gradient(45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%);
+  }
+
+  .img-bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+    
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    
+    /* Set up positioning */
+    position: fixed;
+    top: 10%;
+    left: 0;
+  }
+  
+  @media screen and (max-width: 1024px) { /* Specific to this particular image */
+    .img-bg {
+      left: 50%;
+      margin-left: -512px;   /* 50% */
+    }
+  }
+  
+  .font{
+    font-size: 2em;
+    font-family: 'Permanent marker', cursive;
+  }
+
+  .font:hover{  
+     
+    font-size: 2.3em;    
+    transition: all .1s ease-in-out;
+  }
+
+  .name{
+    text-align: center; 
+    font-size: 3.3rem;
+    font-family: 'Permanent marker', cursive;
+    margin-bottom: 1%;
+  }
+
+  /*flag-image*/
+  
+* {
+  box-sizing: border-box;
+}
+
+
+
+.flag {
+  position: relative;
+  
+  margin: 0 auto;
+}
+
+.flag img {vertical-align: middle;}
+
+
+
+ 

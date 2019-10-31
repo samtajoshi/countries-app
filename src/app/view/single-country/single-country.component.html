@@ -1,0 +1,182 @@
+<!-- <div class="container-fluid ">
+    <div class="row justify-content-center">       
+        <div class="col-12 ">
+            <div class="card" style="border: none;">
+                <img src="{{country.flag}}" class="rounded shadow-lg p-3 mb-5" style="max-height:400px ;border-radius: 100%;" alt="country-flag-image">
+            </div>
+            
+        </div>
+    </div>
+</div> -->
+<div class="container flag">
+    <img src="{{country.flag}}"  alt="flag-image" style="width:100%;">    
+  </div>
+
+  <!--while data is not properly fetched from api-->
+ <div *ngIf="!country">
+    <div class="d-flex justify-content-center">
+        <div class="spinner-grow mt-5" role="status" style="width: 6rem; height: 6rem;">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+ </div> 
+
+ <!--after getting the data-->
+<section style="font-size: 1.4rem;" *ngIf="country">
+    <div class="name">{{country.name}}</div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <!--Introduction section-->
+            <div class="col-12 col-md-5 card shadow-lg " style="padding: 5px; margin: 10px;border: none;">
+                <div>
+                    <h1 class="font" style="text-align: center;"><span>Introduction</span></h1>
+                </div>
+                <div class="m-4 ">
+                    <div><span style="font-weight: bold;">Name</span> : {{country.name}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">Capital</span> : {{country.capital}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">Domain</span> : {{country.topLevelDomain}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">Demonym</span> : {{country.demonym}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">Region</span> : {{country.region}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">Sub-region</span> : {{country.subregion}}</div>
+                    <hr>
+                    <div>
+                            <span style="font-weight: bold;">Regional-Blocs :</span>
+                    </div>
+                    <div class="m-4">
+                        <div *ngFor="let bloc of country.regionalBlocs; let first=first; let last=last">
+                            <div><span style="font-weight: bold;">Acronym : </span><span
+                                    style="font-weight: bold;">{{bloc.acronym}}</span></div>
+                            <div><span style="font-weight: bold;">Name</span> : {{bloc.name}}</div>
+                            <div *ngIf="!last"><hr></div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <!--end of Intro-->
+
+            <!--part showing different names-->
+            <div class="col-12 col-md-5 card shadow-lg" style="padding: 5px; margin: 10px;border: none;">
+                <div>
+                    <h1 style="text-align: center;" class="font">Names</h1>
+                </div>
+                <div class="m-4">
+                    <div><span style="font-weight: bold;">Name</span> : {{country.name}}</div>
+                    <hr>
+                    <div *ngIf="country.name!=country.nativeName"><span style="font-weight: bold;">Native-name</span> :
+                        {{country.nativeName}}
+                        <hr>
+                    </div>
+
+                    <div><span style="font-weight: bold;">Alternate-names</span> : {{country.altSpellings}}</div>
+                    <hr>
+                    <div (click)="showList()"><span style="font-weight: bold;">Translations
+                        </span> <i class="fa fa-angle-double-down"></i>
+                        <ul>
+                            <li>de : {{country.translations.de}}</li>
+                            <li>es : {{country.translations.es}}</li>
+                            <li>fr : {{country.translations.fr}}</li>
+                            <li>ja : {{country.translations.ja}}</li>
+                            <li>it : {{country.translations.it}}</li>
+                            <li>br : {{country.translations.br}}</li>
+                            <li>pt : {{country.translations.pt}}</li>
+                            <li>nl : {{country.translations.nl}}</li>
+                            <li>hr : {{country.translations.hr}}</li>
+                            <li>fa : {{country.translations.fa}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--end of names-->
+
+            <!--Codes section-->
+            <div class="col-12 col-md-5 card shadow-lg" style="padding: 5px; margin: 10px;border: none;">
+                <div>
+                    <h1 style="text-align: center;" class="font">Codes</h1>
+                </div>
+                <div class="m-4">
+                    <div><span style="font-weight: bold;">alpha2-Code</span> : {{country.alpha2Code}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">alpha3-Code</span> : {{country.alpha3Code}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">calling-code</span> : {{country.callingCodes}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">numeric-code</span> : {{country.numericCode}}</div>
+                </div>
+            </div>
+            <!--end of codes-->
+
+            <!--grography section-->
+            <div class="col-12 col-md-5 shadow-lg card" style="padding: 5px; margin: 10px;border: none;">
+                <div>
+                    <h1 style="text-align: center;" class="font">Geography</h1>
+                </div>
+
+                <div class="m-4">
+                    <div><span style="font-weight: bold;">Population</span> : {{country.population}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">Latitude / Longitude</span> : {{country.latlang}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">Area</span> : {{country.area}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">Gini-index</span> : {{country.gini}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">Timezones</span> : {{country.timezones}}</div>
+                    <hr>
+                    <div><span style="font-weight: bold;">Borders</span> : {{country.borders}}</div>
+                </div>
+            </div>
+            <!--end of geography-->
+
+            <!--currency section-->
+            <div class="col-12 col-md-5 card shadow-lg" style="padding: 5px; margin: 10px;border: none;">
+                <div>
+                    <h1 style="text-align: center;" class="font">Currency</h1>
+                </div>
+                <div class="m-4">
+                    <div *ngFor="let currency of country.currencies; let first=first; let last=last">
+                        <div><span style="font-weight: bold;">Name : </span><span
+                                style="font-weight: bold;">{{currency.name}}</span></div>
+                        <div><span style="font-weight: bold;">code</span> : {{currency.code}}</div>
+                        <div><span style="font-weight: bold;">symbol</span> : {{currency.symbol}}</div>
+                        <div *ngIf="!last"><hr></div>  <!--do not show HR if it's last element-->
+                    </div>
+                </div>
+            </div>
+            <!--end of currency-->
+
+            <!--language section-->
+            <div class="col-12 col-md-5 card shadow-lg" style="padding: 5px; margin: 10px;border: none;">
+                <div>
+                    <h1 style="text-align: center;" class="font">Language</h1>
+                </div>
+                <div class="m-4">
+                    <div *ngFor="let language of country.languages; let first=first; let last=last">
+                        <div><span style="font-weight: bold;">Name : </span><span
+                                style="font-weight: bold;">{{language.name}}</span></div>
+                        <div><span style="font-weight: bold;">Native-name</span> : {{language.nativeName}}</div>
+                        <div><span style="font-weight: bold;">iso639_1 code</span> : {{language.iso639_1}}</div>
+                        <div><span style="font-weight: bold;">iso639_2 code</span> : {{language.iso639_2}}</div>
+                        <div *ngIf="!last"><hr></div>
+                    </div>
+                </div>
+            </div>
+            <!--end of language-->
+
+
+
+
+            
+        </div>   <!--end of row-->
+    </div>     <!--end of container-->
+
+</section>
+
+
+
+
