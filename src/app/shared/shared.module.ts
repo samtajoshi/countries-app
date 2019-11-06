@@ -6,13 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AllCountriesComponent } from '../view/all-countries/all-countries.component';
 import { SingleCountryComponent } from '../view/single-country/single-country.component';
+import { FilterPipe } from './filter.pipe';
 
 
 
 
 
 @NgModule({
-  declarations: [CountryInfoComponent],
+  declarations: [CountryInfoComponent,FilterPipe],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -23,6 +24,6 @@ import { SingleCountryComponent } from '../view/single-country/single-country.co
     ])
   ],
 
-  exports: [CountryInfoComponent,FormsModule]
+  exports: [CountryInfoComponent,FormsModule,FilterPipe]
 })
 export class SharedModule { }

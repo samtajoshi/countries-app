@@ -60,8 +60,9 @@ export class AllCountriesComponent implements OnInit {
         this.toastr.success('data found');
       },
       error=>{
-        this.toastr.error('some error occured');
+        this.toastr.error('some error occured , navigating back to previous page');
         console.log(error.message);
+        this.location.back();
       }
     )
   }  //end of showListL()
@@ -77,8 +78,9 @@ export class AllCountriesComponent implements OnInit {
         this.toastr.success('data found');
       },
       error=>{
-        this.toastr.error('some error occured');
+        this.toastr.error('some error occured,navigating back to previous page');
         console.log(error.message);
+        this.location.back();
       }
     )
   }  //end of showListC()
@@ -95,8 +97,9 @@ export class AllCountriesComponent implements OnInit {
         this.toastr.success('data found');
       },
        error=>{
-        this.toastr.error('some error occured');
+        this.toastr.error('some error occured,navigating back to previous page');
         console.log(error.message);
+        this.location.back();
       }
     )
   }  //end of showListR()

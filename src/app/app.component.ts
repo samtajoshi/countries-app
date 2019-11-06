@@ -24,6 +24,7 @@ export class AppComponent {
   public itemC :any;
   public data:any;
   public search : any;
+  public searchR :any;
 
   constructor(public appService: AppService,public router : Router,private route: ActivatedRoute,) {
     this.languages = [];
