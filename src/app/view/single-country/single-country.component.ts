@@ -15,6 +15,7 @@ export class SingleCountryComponent implements OnInit {
   public country : any;
   public urlFlag : any;
   public count :any;
+ 
 
   constructor(public appService : AppService,public _route : ActivatedRoute, public router : Router, public toastr : ToastrService) {
     this.count=0;
@@ -26,19 +27,18 @@ export class SingleCountryComponent implements OnInit {
     this.appService.viewParticularCountry(this.alpha3Code).subscribe(
       data=>{      
          this.country = data;         
-         console.log('data found');
+         console.log('data found');         
          console.log(this.country)
       },
       error=>
      {
-       console.log('some error occured');
+       this.toastr.error('some error occured');
        console.log(error.message);
      }
      
     );
   }
-  public showList(){
-    this.count++;
-  }
+ 
+ 
 
 }

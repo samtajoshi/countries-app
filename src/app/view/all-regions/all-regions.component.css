@@ -26,3 +26,10 @@
     box-shadow: 10px 10px 5px rgb(226, 173, 173);
     margin: 3%;
   }
+
+  .titles{
+    font-family: Cookie;
+    text-align: center;
+    font-size: 4rem;
+   color: black;
+  }

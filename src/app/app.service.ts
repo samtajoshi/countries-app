@@ -20,11 +20,9 @@ export class AppService {
 
    //function to get all countries of a particular region
    public viewAllCountriesOfARegion :any=(region)=>{
-
-    //const params = new HttpParams()
-    //.set('firstName', data.firstName)
     
-    return this.http.get(this.baseUrl+'region/'+region+'?fields=name;alpha3Code;flag;capital;subregion;timezones;languages;currencies');
+    //filtering the response
+    return this.http.get(this.baseUrl+'region/'+region+'?fields=name;nativeName;alpha3Code;flag;capital;subregion;timezones;languages;currencies');
    }
 
    //function to get information of a particular country using alpha3Code
@@ -32,20 +30,15 @@ export class AppService {
 
     return this.http.get(this.baseUrl+'alpha/'+alpha3Code)
    }
-
-   //function to get particular country information using name
-   public viewCountryWithName :any =(name)=>{
-     return this.http.get(this.baseUrl+'name/'+name)
-   }
-
+   
    //function to get all countries with particular language
    public viewCountriesWithALanguage :any =(name)=>{
-    return this.http.get(this.baseUrl+'lang/'+name+'?fields=name;alpha3Code;flag;capital;subregion;timezones;languages;currencies')
+    return this.http.get(this.baseUrl+'lang/'+name+'?fields=name;alpha3Code;nativeName;flag;capital;subregion;timezones;languages;currencies')
    }
 
    //function to get all countries with particular currency
    public viewCountriesWithACurrency :any=(name)=>{
-    return this.http.get(this.baseUrl+'currency/'+name+'?fields=name;alpha3Code;flag;capital;subregion;timezones;languages;currencies')
+    return this.http.get(this.baseUrl+'currency/'+name+'?fields=name;alpha3Code;nativeName;flag;capital;subregion;timezones;languages;currencies')
    }
 
    private handleError(err : HttpErrorResponse){

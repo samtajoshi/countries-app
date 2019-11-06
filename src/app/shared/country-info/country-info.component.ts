@@ -9,7 +9,7 @@ import { Information } from 'src/app/view/info';
 })
 export class CountryInfoComponent implements OnInit {
 
-  @Input() country : Information;
+  @Input() country : Information;    
   @Output()
   notifyLanguage : EventEmitter<string> = new EventEmitter<string>();
   @Output()

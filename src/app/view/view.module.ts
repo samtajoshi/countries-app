@@ -7,16 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-//import { FilterPipe } from '../shared/filter.pipe';
+import { FilterPipe } from '../shared/filter.pipe';
 
 
 
 
 @NgModule({
-  declarations: [AllRegionsComponent, AllCountriesComponent, SingleCountryComponent],
+  declarations: [AllRegionsComponent, AllCountriesComponent, SingleCountryComponent, FilterPipe],
   imports: [
     CommonModule,
-    HttpClientModule,
+    HttpClientModule,  
     SharedModule,
     FormsModule,
     RouterModule.forChild([  

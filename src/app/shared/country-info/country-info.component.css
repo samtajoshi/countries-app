@@ -4,3 +4,7 @@
     transition: all .1s ease-in-out;
   }
   
+.change:hover{
+  color: blue;
+  cursor: pointer;
+}

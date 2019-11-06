@@ -7,16 +7,16 @@
   <div class="collapse navbar-collapse clearfix" id="navbarNav">
     <ul class="nav navbar-nav ml-auto float-right">
       <li>
-        <a class="nav-link float-right" style="color: white;" href="/">About </a>
+        <a class="nav-link float-right font" style="color: white;" href="/">Home </a>
       </li>
       <li>
-        <a class="nav-link float-right" (click)="getAllRegions()" style="cursor: pointer;color: white;">Regions</a>
+        <a class="nav-link float-right font" (click)="getAllRegions()" style="cursor: pointer;color: white;">Regions</a>
       </li>
       <li>
-        <a class="nav-link float-right" (click)="getAllLanguages()" style="cursor: pointer;color: white;">Languages</a>
+        <a class="nav-link float-right font" (click)="getAllLanguages()" style="cursor: pointer;color: white;">Languages</a>
       </li>
       <li>
-        <a class="nav-link float-right" (click)="getAllCurrencies()" style="cursor: pointer;color: white;">Currencies</a>
+        <a class="nav-link float-right font" (click)="getAllCurrencies()" style="cursor: pointer;color: white;">Currencies</a>
       </li>
 
     </ul>
@@ -44,8 +44,8 @@
 </div>
 <div *ngIf="(currency==true)&&(countC%2!=0)">
   <div class="container-fluid" style="max-height:50vh;overflow-y: scroll;">
-    <h3>Select any currency:</h3><i class="fa fa-times-circle float-right clearfix " (click)="getAllCurrencies()"
-        style="font-size: 3rem;cursor: pointer;position: absolute;"></i> 
+    <h3>Select any currency:<i class="fa fa-times-circle float-right clearfix " (click)="getAllCurrencies()"
+        style="font-size: 3rem;cursor: pointer"></i> </h3>
         <ol class="breadcrumb" style="background:white;">
       <li class="breadcrumb-item" *ngFor="let currency of currencies">&nbsp;<a
           (click)="showCountriesByCurrency(currency.code)"><span class="font">{{currency.name}}</span></a>&nbsp;</li>

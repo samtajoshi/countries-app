@@ -1,4 +1,7 @@
 <br>
+<div class="titles">{{titleLine}}</div>
+<br>
+<!--search bar to search for any country by its name-->
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -12,10 +15,15 @@
 
 <br>
 
-<div class="container">
+<!--cards displaying short information about countries-->
+<div class="container" >
     <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4" *ngFor="let country of (allCountries|filter:searchItem)">            
             <country-info [country]="country"></country-info>
         </div>
     </div>
 </div>
+<!--button to go back to previous page-->
+<br>
+<button type="button" style="align-content: center;bottom: 2%; left: 1%;;"(click)="goBack()" class="fixed-bottom">Go Back</button>
+<br>

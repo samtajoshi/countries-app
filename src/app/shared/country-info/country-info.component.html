@@ -1,4 +1,4 @@
-<div class="card ">
+<div class="card">
     <div class="card-header">
         <h3 class="card-title" style="text-align: center; cursor: pointer;"  [routerLink]="['/single-country',country.alpha3Code]">{{country.name}}</h3>
     </div>
@@ -11,11 +11,11 @@
         <li class="list-group-item">TimeZones : {{country.timezones}}</li>
         <li class="list-group-item">Languages :
             <span *ngFor="let language of country.languages; let first=first; let last=last">
-               <span  [routerLink]="['/countries-by-language',language.iso639_1]"> {{language.name}}{{last ? "":","}}</span>
+               <span class="change" [routerLink]="['/countries-by-language',language.iso639_1]"> {{language.name}}{{last ? "":","}}</span>
             </span></li>
         <li class="list-group-item">Currencies :
             <span *ngFor="let currency of country.currencies; let first=first; let last=last">
-                <span  [routerLink]="['/countries-by-currency',currency.code]" class="curr">{{currency.name}}{{last ? "":","}}</span>
+                <span class="change" [routerLink]="['/countries-by-currency',currency.code]" >{{currency.name}}{{last ? "":","}}</span>
             </span></li>
     </ul>
 </div>

@@ -4,21 +4,26 @@ import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Information } from '../info';
+import {Location} from '@angular/common';
+
+
 
 
 @Component({
   selector: 'app-all-countries',
   templateUrl: './all-countries.component.html',
-  styleUrls: ['./all-countries.component.css']
+  styleUrls: ['./all-countries.component.css'],
+  providers : [Location]
 })
 export class AllCountriesComponent implements OnInit {
   public searchItem : any;
   public allCountries :any;  
  public langCode :any;
  public currencyCode:any;
+ public titleLine : any;
   
 
-  constructor(public appService: AppService, public _route: ActivatedRoute, public router: Router, public toastr: ToastrService) {
+  constructor(public appService: AppService,public location : Location, public _route: ActivatedRoute, public router: Router, public toastr: ToastrService) {
      
     
     
@@ -49,8 +54,10 @@ export class AllCountriesComponent implements OnInit {
     this.allCountries=[];
     this.appService.viewCountriesWithALanguage(code).subscribe(
       
-      data=>{
+      (data : Information)=>{
         this.allCountries=data;
+        this.titleLine = `Countries with language-code : ${code}`;
+        this.toastr.success('data found');
       },
       error=>{
         this.toastr.error('some error occured');
@@ -64,9 +71,10 @@ export class AllCountriesComponent implements OnInit {
     this.allCountries=[];
     this.appService.viewCountriesWithACurrency(code).subscribe(
       
-      data=>{
+      (data : Information)=>{
         this.allCountries=data;
-        
+        this.titleLine = `Countries with currency-code : ${code}`;
+        this.toastr.success('data found');
       },
       error=>{
         this.toastr.error('some error occured');
@@ -80,10 +88,11 @@ export class AllCountriesComponent implements OnInit {
     this.allCountries=[];
     this.appService.viewAllCountriesOfARegion(code).subscribe(
       
-      data  =>{
+      (data :Information)  =>{
          
         this.allCountries=data;
-       
+        this.titleLine = `Countries with region : ${code}`;
+        this.toastr.success('data found');
       },
        error=>{
         this.toastr.error('some error occured');
@@ -91,5 +100,9 @@ export class AllCountriesComponent implements OnInit {
       }
     )
   }  //end of showListR()
+
+  public goBack() :any {
+    this.location.back();
+  }
 }
 
