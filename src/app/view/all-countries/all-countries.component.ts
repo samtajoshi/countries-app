@@ -57,7 +57,7 @@ export class AllCountriesComponent implements OnInit {
       (data : Information)=>{
         this.allCountries=data;
         this.titleLine = `Countries with language-code : ${code}`;
-        this.toastr.success('data found');
+        console.log('data found');
       },
       error=>{
         this.toastr.error('some error occured , navigating back to previous page');
@@ -75,7 +75,7 @@ export class AllCountriesComponent implements OnInit {
       (data : Information)=>{
         this.allCountries=data;
         this.titleLine = `Countries with currency-code : ${code}`;
-        this.toastr.success('data found');
+        console.log('data found');
       },
       error=>{
         this.toastr.error('some error occured,navigating back to previous page');
@@ -94,7 +94,7 @@ export class AllCountriesComponent implements OnInit {
          
         this.allCountries=data;
         this.titleLine = `Countries with region : ${code}`;
-        this.toastr.success('data found');
+        console.log('data found');
       },
        error=>{
         this.toastr.error('some error occured,navigating back to previous page');

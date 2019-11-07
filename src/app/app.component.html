@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-  <a class="navbar-brand" href="/">Countries-App</a>
+  <a class="navbar-brand" [routerLink]="['/all-regions']">Countries-App</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false"
     aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse clearfix" id="navbarNav">
     <ul class="nav navbar-nav ml-auto float-right">
       <li>
-        <a class="nav-link float-right font" style="color: white;" href="/"><span class="font">Home</span> </a>
+        <a class="nav-link float-right font" style="color: white;" ><span class="font" [routerLink]="['/all-regions']">Home</span> </a>
       </li>
       <li>
         <a class="nav-link float-right font" (click)="getAllRegions()" style="color: white;"><span class="font">Regions&nbsp;<i class="fa fa-caret-up" *ngIf="(region==true)&&(countR%2!=0)"></i><i class="fa fa-caret-down" *ngIf="(region!=true)||(countR%2==0)"></i></span></a>
